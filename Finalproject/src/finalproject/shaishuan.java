@@ -20,6 +20,7 @@ public class shaishuan extends Composite {
 	 * @param style
 	 */
 	int pa=1, pb=2,pc=3,pd=4,pe=5,pf=6;
+	boolean finished = false;
 	public shaishuan(Composite parent, int style) {
 		super(parent, style);
 		setLayout(new FormLayout());
@@ -115,6 +116,7 @@ public class shaishuan extends Composite {
 		chooseEnd.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {		
+					finished = true;
 					button_3.setText(Integer.toString(pa));
 					button_4.setText(Integer.toString(pb));
 					button_5.setText(Integer.toString(pc));
@@ -139,7 +141,7 @@ public class shaishuan extends Composite {
 		btnBack.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if(pa>1) {
+				if(pa>1 && finished == true) {
 					button_3.setText(Integer.toString((pa-=6)));
 					button_4.setText(Integer.toString((pb-=6)));
 					button_5.setText(Integer.toString((pc-=6)));
@@ -158,13 +160,14 @@ public class shaishuan extends Composite {
 		btnNext.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
+				if(finished == true) {
 				button_3.setText(Integer.toString((pa+=6)));
 				button_4.setText(Integer.toString((pb+=6)));
 				button_5.setText(Integer.toString((pc+=6)));
 				button_6.setText(Integer.toString((pd+=6)));
 				button_7.setText(Integer.toString((pe+=6)));
 				button_8.setText(Integer.toString((pf+=6)));
-			}
+				}	}
 		});
 		btnNext.setLayoutData(new RowData(96, SWT.DEFAULT));
 		btnNext.setText("next");
