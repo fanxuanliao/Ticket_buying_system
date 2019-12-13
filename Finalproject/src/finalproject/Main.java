@@ -1,0 +1,16 @@
+package finalproject;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		setDatas();
+	}
+	
+	public static void setDatas(){
+	movie[] allData ;
+	allData = new movie[50];
+	allData[0] = new movie("lalaland","sss","ss",2.0,2);
+	}
+	
+}
