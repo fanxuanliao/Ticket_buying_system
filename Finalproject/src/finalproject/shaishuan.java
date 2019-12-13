@@ -1,19 +1,15 @@
 package finalproject;
 
-import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.Button;
-import org.eclipse.swt.layout.RowLayout;
-import org.eclipse.swt.layout.FormLayout;
-import org.eclipse.swt.layout.FormData;
-import org.eclipse.swt.layout.FormAttachment;
-import org.eclipse.swt.widgets.Text;
-import org.eclipse.swt.widgets.Table;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.events.MouseAdapter;
-import org.eclipse.swt.events.MouseEvent;
+import org.eclipse.swt.layout.FormAttachment;
+import org.eclipse.swt.layout.FormData;
+import org.eclipse.swt.layout.FormLayout;
+import org.eclipse.swt.layout.RowLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
 
 public class shaishuan extends Composite {
 
@@ -50,9 +46,9 @@ public class shaishuan extends Composite {
 		Composite composite_1 = new Composite(this, SWT.NONE);
 		composite_1.setLayout(new RowLayout(SWT.HORIZONTAL));
 		FormData fd_composite_1 = new FormData();
+		fd_composite_1.left = new FormAttachment(0, 75);
 		fd_composite_1.bottom = new FormAttachment(100, -579);
 		fd_composite_1.top = new FormAttachment(composite, 6);
-		fd_composite_1.left = new FormAttachment(0, 75);
 		composite_1.setLayoutData(fd_composite_1);
 		
 		Button button = new Button(composite_1, SWT.CHECK);
@@ -64,28 +60,34 @@ public class shaishuan extends Composite {
 		Button button_2 = new Button(composite_1, SWT.CHECK);
 		button_2.setText("\u52D5\u4F5C");
 		
-		Button button_3 = new Button(composite_1, SWT.CHECK);
-		button_3.setText("\u5947\u5E7B");
-		
 		Label lblNewLabel = new Label(this, SWT.NONE);
 		lblNewLabel.setTouchEnabled(true);
 		FormData fd_lblNewLabel = new FormData();
-		fd_lblNewLabel.bottom = new FormAttachment(composite_1, 466, SWT.BOTTOM);
+		fd_lblNewLabel.bottom = new FormAttachment(composite_1, 439, SWT.BOTTOM);
+		fd_lblNewLabel.top = new FormAttachment(composite_1, 23);
+		fd_lblNewLabel.left = new FormAttachment(composite, 0, SWT.LEFT);
 		fd_lblNewLabel.right = new FormAttachment(0, 473);
-		fd_lblNewLabel.top = new FormAttachment(composite_1, 50);
-		fd_lblNewLabel.left = new FormAttachment(0, 75);
 		lblNewLabel.setLayoutData(fd_lblNewLabel);
-		String X = "test";
+		String X = "test\n1111\n";
 		//lblNewLabel.setText(X);
 
 		
 		Button chooseEnd = new Button(this, SWT.NONE);
-		fd_composite_1.right = new FormAttachment(chooseEnd, -169);
+		chooseEnd.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				for(int i=0;i<4;i++) {
+					lblNewLabel.setText("XDXDXD\n");					
+				}
+
+			}
+		});
+		fd_composite_1.right = new FormAttachment(100, -370);
 		FormData fd_chooseEnd = new FormData();
-		fd_chooseEnd.bottom = new FormAttachment(composite_1, 47);
-		fd_chooseEnd.top = new FormAttachment(0, 108);
-		fd_chooseEnd.left = new FormAttachment(0, 492);
-		fd_chooseEnd.right = new FormAttachment(100, -89);
+		fd_chooseEnd.bottom = new FormAttachment(composite_1, 0, SWT.BOTTOM);
+		fd_chooseEnd.left = new FormAttachment(composite_1, 6);
+		fd_chooseEnd.top = new FormAttachment(0, 100);
+		fd_chooseEnd.right = new FormAttachment(100, -252);
 		chooseEnd.setLayoutData(fd_chooseEnd);
 		chooseEnd.setText("\u9078\u64C7\u7D42\u4E86");
 		
