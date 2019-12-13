@@ -19,8 +19,11 @@ public class shaishuan extends Composite {
 	 * @param parent
 	 * @param style
 	 */
-	int pa=1, pb=2,pc=3,pd=4,pe=5,pf=6;
+	int pa=1,pb=2,pc=3,pd=4,pe=5,pf=6;
+	movie datain[] = Main.setDatas();
+	int max;
 	boolean finished = false;
+	
 	public shaishuan(Composite parent, int style) {
 		super(parent, style);
 		setLayout(new FormLayout());
@@ -99,13 +102,6 @@ public class shaishuan extends Composite {
 		fd_button_7.left = new FormAttachment(0, 75);
 		button_7.setLayoutData(fd_button_7);
 		
-		Button button_8 = new Button(this, SWT.NONE);
-		FormData fd_button_8 = new FormData();
-		fd_button_8.right = new FormAttachment(0, 472);
-		fd_button_8.top = new FormAttachment(0, 340);
-		fd_button_8.left = new FormAttachment(0, 75);
-		button_8.setLayoutData(fd_button_8);
-		
 		Button chooseEnd = new Button(this, SWT.NONE);
 		FormData fd_chooseEnd = new FormData();
 		fd_chooseEnd.bottom = new FormAttachment(0, 136);
@@ -117,59 +113,56 @@ public class shaishuan extends Composite {
 			@Override
 			public void widgetSelected(SelectionEvent e) {		
 					finished = true;
-					button_3.setText(Integer.toString(pa));
-					button_4.setText(Integer.toString(pb));
-					button_5.setText(Integer.toString(pc));
-					button_6.setText(Integer.toString(pd));
-					button_7.setText(Integer.toString(pe));
-					button_8.setText(Integer.toString(pf));
+					button_3.setText(datain[pa].name);
+					button_4.setText(datain[pb].name);
+					button_5.setText(datain[pc].name);
+					button_6.setText(datain[pd].name);
+					button_7.setText(datain[pe].name);
 
 			}
 		});
 		chooseEnd.setText("\u9078\u64C7\u7D42\u4E86");
 		
 		Composite composite_2 = new Composite(this, SWT.NONE);
+		composite_2.setLayout(null);
 		FormData fd_composite_2 = new FormData();
-		fd_composite_2.top = new FormAttachment(button_8, 18);
+		fd_composite_2.right = new FormAttachment(composite, 0, SWT.RIGHT);
+		fd_composite_2.top = new FormAttachment(button_7, 6);
 		fd_composite_2.left = new FormAttachment(chooseEnd, 0, SWT.LEFT);
-		fd_composite_2.bottom = new FormAttachment(0, 447);
-		fd_composite_2.right = new FormAttachment(0, 625);
+		fd_composite_2.bottom = new FormAttachment(100, -311);
 		composite_2.setLayoutData(fd_composite_2);
-		composite_2.setLayout(new RowLayout(SWT.HORIZONTAL));
 		
 		Button btnBack = new Button(composite_2, SWT.NONE);
+		btnBack.setBounds(3, 3, 79, 25);
 		btnBack.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				if(pa>1 && finished == true) {
-					button_3.setText(Integer.toString((pa-=6)));
-					button_4.setText(Integer.toString((pb-=6)));
-					button_5.setText(Integer.toString((pc-=6)));
-					button_6.setText(Integer.toString((pd-=6)));
-					button_7.setText(Integer.toString((pe-=6)));
-					button_8.setText(Integer.toString((pf-=6)));
+					button_3.setText(datain[pa-=5].name);
+					button_4.setText(datain[pb-=5].name);
+					button_5.setText(datain[pc-=5].name);
+					button_6.setText(datain[pd-=5].name);
+					button_7.setText(datain[pe-=5].name);
 				}
 				else {
 				}
 			}
 		});
-		btnBack.setLayoutData(new RowData(94, SWT.DEFAULT));
 		btnBack.setText("back");
 		
 		Button btnNext = new Button(composite_2, SWT.NONE);
+		btnNext.setBounds(85, 3, 87, 25);
 		btnNext.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				if(finished == true) {
-				button_3.setText(Integer.toString((pa+=6)));
-				button_4.setText(Integer.toString((pb+=6)));
-				button_5.setText(Integer.toString((pc+=6)));
-				button_6.setText(Integer.toString((pd+=6)));
-				button_7.setText(Integer.toString((pe+=6)));
-				button_8.setText(Integer.toString((pf+=6)));
-				}	}
+					button_3.setText(datain[pa+=5].name);
+					button_4.setText(datain[pb+=5].name);
+					button_5.setText(datain[pc+=5].name);
+					button_6.setText(datain[pd+=5].name);
+					button_7.setText(datain[pe+=5].name);
+				}}
 		});
-		btnNext.setLayoutData(new RowData(96, SWT.DEFAULT));
 		btnNext.setText("next");
 		
 		
