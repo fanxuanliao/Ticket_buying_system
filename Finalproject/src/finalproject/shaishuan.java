@@ -20,7 +20,6 @@ public class shaishuan extends Composite {
 	 * @param style
 	 */
 	int pa=1,pb=2,pc=3,pd=4,pe=5,pf=6;
-	movie datain[] = Main.setDatas();
 	int max;
 	boolean finished = false;
 	
@@ -113,11 +112,11 @@ public class shaishuan extends Composite {
 			@Override
 			public void widgetSelected(SelectionEvent e) {		
 					finished = true;
-					button_3.setText(datain[pa].name);
-					button_4.setText(datain[pb].name);
-					button_5.setText(datain[pc].name);
-					button_6.setText(datain[pd].name);
-					button_7.setText(datain[pe].name);
+					button_3.setText(Main.datain[pa].name);
+					button_4.setText(Main.datain[pb].name);
+					button_5.setText(Main.datain[pc].name);
+					button_6.setText(Main.datain[pd].name);
+					button_7.setText(Main.datain[pe].name);
 
 			}
 		});
@@ -138,11 +137,11 @@ public class shaishuan extends Composite {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				if(pa>1 && finished == true) {
-					button_3.setText(datain[pa-=5].name);
-					button_4.setText(datain[pb-=5].name);
-					button_5.setText(datain[pc-=5].name);
-					button_6.setText(datain[pd-=5].name);
-					button_7.setText(datain[pe-=5].name);
+					button_3.setText(Main.datain[pa-=5].name);
+					button_4.setText(Main.datain[pb-=5].name);
+					button_5.setText(Main.datain[pc-=5].name);
+					button_6.setText(Main.datain[pd-=5].name);
+					button_7.setText(Main.datain[pe-=5].name);
 				}
 				else {
 				}
@@ -156,11 +155,11 @@ public class shaishuan extends Composite {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				if(finished == true) {
-					button_3.setText(datain[pa+=5].name);
-					button_4.setText(datain[pb+=5].name);
-					button_5.setText(datain[pc+=5].name);
-					button_6.setText(datain[pd+=5].name);
-					button_7.setText(datain[pe+=5].name);
+					button_3.setText(Main.datain[pa+=5].name);
+					button_4.setText(Main.datain[pb+=5].name);
+					button_5.setText(Main.datain[pc+=5].name);
+					button_6.setText(Main.datain[pd+=5].name);
+					button_7.setText(Main.datain[pe+=5].name);
 				}}
 		});
 		btnNext.setText("next");

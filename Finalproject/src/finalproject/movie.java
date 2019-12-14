@@ -5,7 +5,6 @@ public class movie {
 	this.name = "default";
 	this.region = "default";
 	this.type = "default";
-	this.prize = 0.0;
 	this.commandStars = 0;
 	};
 	movie(String name,String region, String type, double prize,int commandStars){

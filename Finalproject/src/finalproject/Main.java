@@ -1,10 +1,9 @@
 package finalproject;
 
 public class Main {
-
+	static movie datain[] = setDatas();
 	public void main(String[] args) {
 		// TODO Auto-generated method stub
-		setDatas();
 		int[] array = new int[50];
 		for(int i=0;i<50;i++) {
 			array[i] = i;
@@ -20,8 +19,5 @@ public class Main {
 		allData[2] = new movie("lalaland2","sss","ss",2.0,2);
 		allData[3] = new movie("lalaland3","qqq","ss",2.0,2);
 		return allData;
-
-	
 	}
-	
 }
