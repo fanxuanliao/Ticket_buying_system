@@ -49,56 +49,71 @@ public class shaishuan extends Composite {
 		setLayout(null);
 		
 		Composite composite = new Composite(this, SWT.NONE);
-		composite.setBounds(75, 48, 445, 36);
-		composite.setLayout(new RowLayout(SWT.HORIZONTAL));
+		composite.setBounds(72, 94, 445, 25);
+		composite.setLayout(null);
 		
 		Button btnCheckButton = new Button(composite, SWT.CHECK);
+		btnCheckButton.setBounds(3, 3, 45, 16);
 		btnCheckButton.setText("\u82F1\u8A9E");
 		
 		Button btnCheckButton_1 = new Button(composite, SWT.CHECK);
+		btnCheckButton_1.setBounds(51, 3, 45, 16);
 		btnCheckButton_1.setText("\u6B50\u6D32");
 		
 		Button btnCheckButton_2 = new Button(composite, SWT.CHECK);
+		btnCheckButton_2.setBounds(99, 3, 45, 16);
 		btnCheckButton_2.setText("\u83EF\u8A9E");
 		
 		Button btnCheckButton_3 = new Button(composite, SWT.CHECK);
+		btnCheckButton_3.setBounds(147, 3, 69, 16);
 		btnCheckButton_3.setText("\u4E9E\u6D32\u5176\u4ED6");
 		
 		Composite composite_1 = new Composite(this, SWT.NONE);
-		composite_1.setBounds(75, 90, 324, 73);
-		composite_1.setLayout(new RowLayout(SWT.HORIZONTAL));
+		composite_1.setBounds(75, 125, 324, 38);
+		composite_1.setLayout(null);
 		
 		Button b01 = new Button(composite_1, SWT.CHECK);
+		b01.setBounds(3, 3, 45, 16);
 		b01.setText("\u52D5\u4F5C");
 		
 		Button b02 = new Button(composite_1, SWT.CHECK);
+		b02.setBounds(51, 3, 45, 16);
 		b02.setText("\u52D5\u756B");
 		
 		Button b03 = new Button(composite_1, SWT.CHECK);
+		b03.setBounds(99, 3, 45, 16);
 		b03.setText("\u72AF\u7F6A");
 		
 		Button b04 = new Button(composite_1, SWT.CHECK);
+		b04.setBounds(147, 3, 45, 16);
 		b04.setText("\u5287\u60C5");
 		
 		Button b05 = new Button(composite_1, SWT.CHECK);
+		b05.setBounds(195, 3, 45, 16);
 		b05.setText("\u5192\u96AA");
 		
 		Button b06 = new Button(composite_1, SWT.CHECK);
+		b06.setBounds(243, 3, 45, 16);
 		b06.setText("\u611B\u60C5");
 		
 		Button b07 = new Button(composite_1, SWT.CHECK);
+		b07.setBounds(3, 22, 45, 16);
 		b07.setText("\u79D1\u5E7B");
 		
 		Button b08 = new Button(composite_1, SWT.CHECK);
+		b08.setBounds(51, 22, 45, 16);
 		b08.setText("\u559C\u5287");
 		
 		Button b09 = new Button(composite_1, SWT.CHECK);
+		b09.setBounds(99, 22, 45, 16);
 		b09.setText("\u6B77\u53F2");
 		
 		Button b10 = new Button(composite_1, SWT.CHECK);
+		b10.setBounds(147, 22, 45, 16);
 		b10.setText("\u97F3\u6A02");
 		
 		Button b11 = new Button(composite_1, SWT.CHECK);
+		b11.setBounds(195, 22, 117, 16);
 		b11.setText("\u6050\u6016\u3001\u9A5A\u609A\u3001\u61F8\u7591");
 		
 		Button button_3 = new Button(this, SWT.NONE);
