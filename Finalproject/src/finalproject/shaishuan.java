@@ -19,7 +19,7 @@ public class shaishuan extends Composite {
 	 * @param parent
 	 * @param style
 	 */
-	int btn_1=1,btn_2=2,btn_3=3,btn_4=4,btn_5=5,btn_6=6;
+	int btn_1=0,btn_2=1,btn_3=2,btn_4=3,btn_5=4;
 	int max, cnt=0;
 	boolean finished = false;
 	boolean En,Eu,Ch,other;
@@ -38,6 +38,9 @@ public class shaishuan extends Composite {
 				cnt++;
 			}
 		}
+		for(int i=cnt; i < cnt+(5-cnt%5) ; i++) {
+			selectedData[i] = new movie();
+		}
 	}
 	
 	
@@ -46,7 +49,7 @@ public class shaishuan extends Composite {
 		setLayout(null);
 		
 		Composite composite = new Composite(this, SWT.NONE);
-		composite.setBounds(75, 51, 445, 33);
+		composite.setBounds(75, 48, 445, 36);
 		composite.setLayout(new RowLayout(SWT.HORIZONTAL));
 		
 		Button btnCheckButton = new Button(composite, SWT.CHECK);
@@ -62,7 +65,7 @@ public class shaishuan extends Composite {
 		btnCheckButton_3.setText("\u4E9E\u6D32\u5176\u4ED6");
 		
 		Composite composite_1 = new Composite(this, SWT.NONE);
-		composite_1.setBounds(75, 90, 327, 46);
+		composite_1.setBounds(75, 90, 324, 73);
 		composite_1.setLayout(new RowLayout(SWT.HORIZONTAL));
 		
 		Button b01 = new Button(composite_1, SWT.CHECK);
@@ -114,7 +117,7 @@ public class shaishuan extends Composite {
 		button_7.setBounds(75, 309, 397, 25);
 		
 		Button chooseEnd = new Button(this, SWT.NONE);
-		chooseEnd.setBounds(408, 100, 112, 36);
+		chooseEnd.setBounds(405, 127, 112, 36);
 		chooseEnd.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {		
