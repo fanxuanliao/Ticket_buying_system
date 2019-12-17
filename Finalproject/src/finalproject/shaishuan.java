@@ -19,7 +19,7 @@ public class shaishuan extends Composite {
 	 * @param parent
 	 * @param style
 	 */
-	int pa=1,pb=2,pc=3,pd=4,pe=5,pf=6;
+	int btn_1=1,btn_2=2,btn_3=3,btn_4=4,btn_5=5,btn_6=6;
 	int max, cnt=0;
 	boolean finished = false;
 	boolean En,Eu,Ch,other;
@@ -138,11 +138,11 @@ public class shaishuan extends Composite {
 
 					filter();
 					
-					button_3.setText(selectedData[pa].name);
-					button_4.setText(selectedData[pb].name);
-					button_5.setText(selectedData[pc].name);
-					button_6.setText(selectedData[pd].name);
-					button_7.setText(selectedData[pe].name);
+					button_3.setText(selectedData[btn_1].name);
+					button_4.setText(selectedData[btn_2].name);
+					button_5.setText(selectedData[btn_3].name);
+					button_6.setText(selectedData[btn_4].name);
+					button_7.setText(selectedData[btn_5].name);
 
 			}
 		});
@@ -157,15 +157,14 @@ public class shaishuan extends Composite {
 		btnBack.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if(pa>1 && finished == true) {
-					button_3.setText(selectedData[pa-=5].name);
-					button_4.setText(selectedData[pb-=5].name);
-					button_5.setText(selectedData[pc-=5].name);
-					button_6.setText(selectedData[pd-=5].name);
-					button_7.setText(selectedData[pe-=5].name);
+				if(btn_1>1 && finished == true) {
+					button_3.setText(selectedData[btn_1-=5].name);
+					button_4.setText(selectedData[btn_2-=5].name);
+					button_5.setText(selectedData[btn_3-=5].name);
+					button_6.setText(selectedData[btn_4-=5].name);
+					button_7.setText(selectedData[btn_5-=5].name);
 				}
-				else {
-				}
+
 			}
 		});
 		btnBack.setText("back");
@@ -175,18 +174,15 @@ public class shaishuan extends Composite {
 		btnNext.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if(finished == true && (pe+5 <= cnt)) {
-					button_3.setText(selectedData[pa+=5].name);
-					button_4.setText(selectedData[pb+=5].name);
-					button_5.setText(selectedData[pc+=5].name);
-					button_6.setText(selectedData[pd+=5].name);
-					button_7.setText(selectedData[pe+=5].name);
+				if(finished == true && (btn_5+5 <= cnt)) {
+					button_3.setText(selectedData[btn_1+=5].name);
+					button_4.setText(selectedData[btn_2+=5].name);
+					button_5.setText(selectedData[btn_3+=5].name);
+					button_6.setText(selectedData[btn_4+=5].name);
+					button_7.setText(selectedData[btn_5+=5].name);
 				}}
 		});
 		btnNext.setText("next");
-		
-		
-
 	}
 
 	@Override
