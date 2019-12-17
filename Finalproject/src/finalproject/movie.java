@@ -10,7 +10,7 @@ public class movie {
 		this.name = name;
 		this.region = region;
 		this.type = type;
-		this.prize = 300;
+		this.prize = 300.0;
 	}
 	//movie contribute
 	String name;
