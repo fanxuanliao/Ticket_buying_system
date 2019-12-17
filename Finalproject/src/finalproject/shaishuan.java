@@ -29,11 +29,11 @@ public class shaishuan extends Composite {
 	public void filter() {
 		cnt=0;
 		for(int i =0;i<50;i++) {
-			if( (Main.datain[i].En && En) || (Main.datain[i].Eu &&Eu) || (Main.datain[i].Ch&&Ch) || (Main.datain[i].other&&other) ) {
+			if( (Main.datain[i].En && En) || (Main.datain[i].Eu &&Eu) || (Main.datain[i].Ch && Ch) || (Main.datain[i].other && other) ) {
 				selectedData[cnt] = Main.datain[i];
 				cnt++;
 			}
-			else if( (st01&&Main.datain[i].ty01)||(st02&&Main.datain[i].ty02)||(st03&&Main.datain[i].ty03)||(st04&&Main.datain[i].ty04)||(st05&&Main.datain[i].ty05)||(st06&&Main.datain[i].ty06)||(st07&&Main.datain[i].ty07)||(st08&&Main.datain[i].ty08)||(st09&&Main.datain[i].ty09)||(st10&&Main.datain[i].ty10)||(st11&&Main.datain[i].ty11)){
+			else if( (st01 && Main.datain[i].ty01)||(st02 && Main.datain[i].ty02)||(st03 && Main.datain[i].ty03)||(st04 && Main.datain[i].ty04)||(st05 && Main.datain[i].ty05)||(st06 && Main.datain[i].ty06)||(st07 && Main.datain[i].ty07)||(st08 && Main.datain[i].ty08)||(st09 && Main.datain[i].ty09)||(st10 && Main.datain[i].ty10)||(st11 && Main.datain[i].ty11)){
 				selectedData[cnt] = Main.datain[i];
 				cnt++;
 			}

@@ -1,20 +1,29 @@
 package finalproject;
 
+import java.io.IOException;
+
 public class Main {
-	static movie datain[] = setDatas();
-	public void main(String[] args) {
+	static movie datain[] = setData();
+	//public void main(String[] args) 
+	public static void main(String[] args){
 		// TODO Auto-generated method stub
-		int[] array = new int[50];
 	}
 	
-	public static movie[] setDatas(){
+	public static movie[] setData(){
 		movie[] allData;
-		allData = new movie[50];
-		for(int i=0;i<50;i++) allData[i] = new movie();
-		allData[0] = new movie("lalaland");
-		allData[1] = new movie("lalaland1");
-		allData[2] = new movie("lalaland2");
-		allData[3] = new movie("lalaland3");
+		allData = new movie[1];
+		for(int i=0;i<1;i++)
+		{
+			try
+			{
+				movie datain = new movie("lalaland", "1");
+			}
+		
+			catch(IOException IO)
+			{
+				System.out.println(IO);
+			}
+		}
 		return allData;
 	}
 }

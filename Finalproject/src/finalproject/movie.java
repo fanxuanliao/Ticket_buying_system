@@ -1,5 +1,10 @@
 package finalproject;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class movie {
 	movie(){		
 	this.name = " ";
@@ -21,12 +26,23 @@ public class movie {
 	ty11 = false;
 
 	};
-	movie(String name){
+	
+	movie(String name, String i) throws IOException{
 		this.name = name;
 		this.prize = 300.0;
+		FileReader fr = new FileReader("src/intro/" + i + ".txt");
+		BufferedReader br = new BufferedReader(fr);
+		while (br.ready())
+		{
+			System.out.println(br.readLine());
+		}
+		
+		fr.close();
 	}
 	//movie contribute
 	String name;
+	String photo;
+	
 	boolean En;
 	boolean Eu;
 	boolean Ch;
