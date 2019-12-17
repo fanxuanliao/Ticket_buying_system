@@ -6,7 +6,7 @@ public class movie {
 	this.region = " ";
 	this.type = " ";
 	};
-	movie(String name,String region, String type, double prize){
+	movie(String name,String region, String type){
 		this.name = name;
 		this.region = region;
 		this.type = type;
