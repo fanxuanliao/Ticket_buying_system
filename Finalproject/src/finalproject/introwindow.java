@@ -8,8 +8,10 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.widgets.Text;
 
 public class introwindow extends Composite {
+	private Text text;
 
 	/**
 	 * Create the composite.
@@ -75,11 +77,15 @@ public class introwindow extends Composite {
 		prize.setFont(SWTResourceManager.getFont("¶ÂÅé-Ác", 16, SWT.BOLD));
 		prize.setBounds(501, 488, 88, 23);
 		
+		text = new Text(this, SWT.BORDER);
+		text.setBounds(516, 529, 73, 21);
+		
 		Button button = new Button(this, SWT.NONE);
 		button.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				prize.setText("666");
+				text.setText("ddd");
 			}
 		});
 		button.setFont(SWTResourceManager.getFont("Microsoft JhengHei UI", 12, SWT.NORMAL));
