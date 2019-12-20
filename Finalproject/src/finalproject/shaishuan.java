@@ -21,7 +21,7 @@ public class shaishuan extends Composite {
 	 */
 	int btn_1=0,btn_2=1,btn_3=2,btn_4=3,btn_5=4;
 	int max, cnt=0;
-	boolean finished = false;
+	public boolean finished = false;
 	boolean En,Eu,Ch,other;
 	boolean st01,st02,st03,st04,st05,st06,st07,st08,st09,st10,st11;
 	movie[] selectedData = new movie[50];
@@ -34,7 +34,7 @@ public class shaishuan extends Composite {
 
 	public void filter() {
 		cnt=0;
-		for(int i =0;i<50;i++) {
+		/*for(int i =0;i<50;i++) {
 			if( (Main.datain[i].En && En) || (Main.datain[i].Eu &&Eu) || (Main.datain[i].Ch && Ch) || (Main.datain[i].other && other) ) {
 				selectedData[cnt] = Main.datain[i];
 				cnt++;
@@ -46,7 +46,10 @@ public class shaishuan extends Composite {
 		}
 		for(int i=cnt; i < cnt+(5-cnt%5) ; i++) {
 			selectedData[i] = new movie();
-		}
+		}*/
+		for(int i=0; i < 50 ; i++) {
+			selectedData[i] = new movie();
+		}			
 	}
 	
 	
@@ -123,48 +126,23 @@ public class shaishuan extends Composite {
 		b11.setText("\u6050\u6016\u3001\u9A5A\u609A\u3001\u61F8\u7591");
 		
 		button = new Button(this, SWT.NONE);
-		button.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-				maintest.Show1();
-			}
-		});
+
 		button.setBounds(75, 185, 397, 25);
 		
 		button_1 = new Button(this, SWT.NONE);
-		button_1.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-				maintest.Show2();
-			}
-		});
+
 		button_1.setBounds(75, 216, 397, 25);
 		
 		button_2 = new Button(this, SWT.NONE);
-		button_2.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-				maintest.Show3();
-			}
-		});
+
 		button_2.setBounds(75, 247, 397, 25);
 		
 		button_3 = new Button(this, SWT.NONE);
-		button_3.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-				maintest.Show4();
-			}
-		});
+
 		button_3.setBounds(75, 278, 397, 25);
 		
 		button_4 = new Button(this, SWT.NONE);
-		button_4.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-				maintest.Show5();
-			}
-		});
+
 		button_4.setBounds(75, 309, 397, 25);
 		
 		Button chooseEnd = new Button(this, SWT.NONE);
