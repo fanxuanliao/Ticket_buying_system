@@ -5,13 +5,17 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StackLayout;
 import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.widgets.Composite;
 
 public class maintest {
 
 	protected Shell shell;
-	public static shaishuan shaishuan;
-	public static introwindow introwindow;
-	public static command command;
+	private shaishuan shaishuan;
+	private introwindow introwindow;
+	private command command;
+	private Composite composite;
 
 	/**
 	 * Launch the application.
@@ -48,46 +52,63 @@ public class maintest {
 		shell = new Shell();
 		shell.setSize(1293, 772);
 		shell.setText("SWT Application");
-		shell.setLayout(null);
+		shell.setLayout(new StackLayout());
 		
-		introwindow = new introwindow(shell, SWT.NONE);
-		introwindow.setBounds(0, 0, 1277, 733);
+		composite = new Composite(shell, SWT.NONE);
+		composite.setLayout(new StackLayout());
 		
-		shaishuan = new shaishuan(shell, SWT.NONE);
-		shaishuan.setBounds(0, 0, 1277, 733);
+		command = new command(composite, SWT.NONE);
 		
-		command = new command(shell, SWT.NONE);
-		command.setBounds(0, 0, 1277, 733);
+		shaishuan = new shaishuan(composite, SWT.NONE);
+		shaishuan.button_4.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				Show();
+			}
+		});
+		shaishuan.button_3.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				Show();
+			}
+		});
+		shaishuan.button_2.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				Show();
+			}
+		});
+		shaishuan.button_1.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				Show();
+			}
+		});
+		shaishuan.button.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				Show();
+			}
+		});
+				
+		introwindow = new introwindow(composite, SWT.NONE);
+		introwindow.button_1.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				Showcom();
+			}
+		});
 
 	}
-	public  static void Show1() {
-		StackLayout layout= (StackLayout) shaishuan.getLayout();
-		layout.topControl= shaishuan.button;
-		shaishuan.layout();
+	private void Show() {
+		StackLayout layout= (StackLayout) this.composite.getLayout();
+		layout.topControl= introwindow;
+		this.composite.layout();
 	}
-	public  static void Show2() {
-		StackLayout layout= (StackLayout) shaishuan.getLayout();
-		layout.topControl= shaishuan.button_1;
-		shaishuan.layout();
-	}
-	public  static void Show3() {
-		StackLayout layout= (StackLayout) shaishuan.getLayout();
-		layout.topControl= shaishuan.button_2;
-		shaishuan.layout();
-	}
-	public  static void Show4() {
-		StackLayout layout= (StackLayout) shaishuan.getLayout();
-		layout.topControl= shaishuan.button_3;
-		shaishuan.layout();
-	}
-	public  static void Show5() {
-		StackLayout layout= (StackLayout) shaishuan.getLayout();
-		layout.topControl= shaishuan.button_4;
-		shaishuan.layout();
-	}
-	public  static void Showcom() {
-		StackLayout layout= (StackLayout) introwindow.getLayout();
-		layout.topControl= introwindow.button_1;
-		introwindow.layout();
+
+	private void Showcom() {
+		StackLayout layout= (StackLayout) this.composite.getLayout();
+		layout.topControl= this.command;
+		this.composite.layout();
 	}
 }
