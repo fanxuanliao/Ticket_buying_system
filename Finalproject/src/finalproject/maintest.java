@@ -8,6 +8,11 @@ import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.wb.swt.SWTResourceManager;
 
 public class maintest {
 
@@ -16,6 +21,8 @@ public class maintest {
 	private introwindow introwindow;
 	private command command;
 	private Composite composite;
+	private Composite composite_1;
+	private Button button;
 
 	/**
 	 * Launch the application.
@@ -28,6 +35,7 @@ public class maintest {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 	}
 
 	/**
@@ -52,14 +60,31 @@ public class maintest {
 		shell = new Shell();
 		shell.setSize(1293, 772);
 		shell.setText("SWT Application");
-		shell.setLayout(new StackLayout());
+		shell.setLayout(new GridLayout(1, false));
+		
+		composite_1 = new Composite(shell, SWT.NONE);
+		GridData gd_composite_1 = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
+		gd_composite_1.widthHint = 753;
+		composite_1.setLayoutData(gd_composite_1);
+		
+		button = new Button(composite_1, SWT.NONE);
+		button.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				start();
+			}
+		});
+		button.setFont(SWTResourceManager.getFont("Microsoft JhengHei UI", 16, SWT.BOLD));
+		button.setBounds(0, 0, 145, 54);
+		button.setText("\u958B\u59CB\u4F7F\u7528");
 		
 		composite = new Composite(shell, SWT.NONE);
 		composite.setLayout(new StackLayout());
 		
 		command = new command(composite, SWT.NONE);
-		
 		shaishuan = new shaishuan(composite, SWT.NONE);
+		introwindow = new introwindow(composite, SWT.NONE);
+
 		shaishuan.button_4.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
@@ -91,7 +116,6 @@ public class maintest {
 			}
 		});
 				
-		introwindow = new introwindow(composite, SWT.NONE);
 		introwindow.button_1.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
@@ -99,6 +123,11 @@ public class maintest {
 			}
 		});
 
+	}
+	private void start() {
+		StackLayout layout= (StackLayout) this.composite.getLayout();
+		layout.topControl= shaishuan;
+		this.composite.layout();
 	}
 	private void Show() {
 		StackLayout layout= (StackLayout) this.composite.getLayout();
