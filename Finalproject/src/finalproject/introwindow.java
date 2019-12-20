@@ -13,6 +13,7 @@ import org.eclipse.swt.widgets.Text;
 
 public class introwindow extends Composite {
 	int iden, amount, pay;
+	public Button button_1;
 
 	/**
 	 * Create the composite.
@@ -96,7 +97,13 @@ public class introwindow extends Composite {
 		button.setBounds(621, 421, 114, 35);
 		button.setText("\u8A08\u7B97\u7968\u50F9");
 		
-		Button button_1 = new Button(this, SWT.NONE);
+		button_1 = new Button(this, SWT.NONE);
+		button_1.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				maintest.Showcom();
+			}
+		});
 		button_1.setFont(SWTResourceManager.getFont("Microsoft JhengHei UI", 12, SWT.NORMAL));
 		button_1.setText("\u78BA\u8A8D\u4ED8\u6B3E");
 		button_1.setBounds(621, 488, 114, 35);

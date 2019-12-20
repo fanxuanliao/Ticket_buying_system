@@ -6,6 +6,8 @@ import org.eclipse.swt.SWT;
 import org.eclipse.wb.swt.SWTResourceManager;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 
 public class command extends Composite {
 	private Text text;
@@ -28,6 +30,12 @@ public class command extends Composite {
 		text.setBounds(84, 89, 657, 292);
 		
 		Button button = new Button(this, SWT.NONE);
+		button.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+			text.setText("");	
+			}
+		});
 		button.setFont(SWTResourceManager.getFont("Microsoft JhengHei UI", 14, SWT.BOLD));
 		button.setBounds(606, 404, 135, 37);
 		button.setText("\u905E\u4EA4\u8A55\u50F9");

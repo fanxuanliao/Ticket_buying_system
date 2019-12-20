@@ -9,6 +9,9 @@ import org.eclipse.swt.layout.FillLayout;
 public class maintest {
 
 	protected Shell shell;
+	public static shaishuan shaishuan;
+	public static introwindow introwindow;
+	public static command command;
 
 	/**
 	 * Launch the application.
@@ -45,11 +48,46 @@ public class maintest {
 		shell = new Shell();
 		shell.setSize(1293, 772);
 		shell.setText("SWT Application");
-		shell.setLayout(new FillLayout(SWT.HORIZONTAL));
+		shell.setLayout(null);
 		
-		shaishuan shaishuan_ = new shaishuan(shell, SWT.NONE);
+		introwindow = new introwindow(shell, SWT.NONE);
+		introwindow.setBounds(0, 0, 1277, 733);
 		
-		introwindow introwindow_ = new introwindow(shell, SWT.NONE);
+		shaishuan = new shaishuan(shell, SWT.NONE);
+		shaishuan.setBounds(0, 0, 1277, 733);
+		
+		command = new command(shell, SWT.NONE);
+		command.setBounds(0, 0, 1277, 733);
 
+	}
+	public  static void Show1() {
+		StackLayout layout= (StackLayout) shaishuan.getLayout();
+		layout.topControl= shaishuan.button;
+		shaishuan.layout();
+	}
+	public  static void Show2() {
+		StackLayout layout= (StackLayout) shaishuan.getLayout();
+		layout.topControl= shaishuan.button_1;
+		shaishuan.layout();
+	}
+	public  static void Show3() {
+		StackLayout layout= (StackLayout) shaishuan.getLayout();
+		layout.topControl= shaishuan.button_2;
+		shaishuan.layout();
+	}
+	public  static void Show4() {
+		StackLayout layout= (StackLayout) shaishuan.getLayout();
+		layout.topControl= shaishuan.button_3;
+		shaishuan.layout();
+	}
+	public  static void Show5() {
+		StackLayout layout= (StackLayout) shaishuan.getLayout();
+		layout.topControl= shaishuan.button_4;
+		shaishuan.layout();
+	}
+	public  static void Showcom() {
+		StackLayout layout= (StackLayout) introwindow.getLayout();
+		layout.topControl= introwindow.button_1;
+		introwindow.layout();
 	}
 }

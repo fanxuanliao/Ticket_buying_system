@@ -25,9 +25,15 @@ public class shaishuan extends Composite {
 	boolean En,Eu,Ch,other;
 	boolean st01,st02,st03,st04,st05,st06,st07,st08,st09,st10,st11;
 	movie[] selectedData = new movie[50];
+	public Composite composite_1;
+	public Button button;
+	public Button button_1;
+	public Button button_3;
+	public Button button_4;
+	public Button button_2;
 
 	public void filter() {
-		/*cnt=0;
+		cnt=0;
 		for(int i =0;i<50;i++) {
 			if( (Main.datain[i].En && En) || (Main.datain[i].Eu &&Eu) || (Main.datain[i].Ch && Ch) || (Main.datain[i].other && other) ) {
 				selectedData[cnt] = Main.datain[i];
@@ -39,9 +45,6 @@ public class shaishuan extends Composite {
 			}
 		}
 		for(int i=cnt; i < cnt+(5-cnt%5) ; i++) {
-			selectedData[i] = new movie();
-		}*/
-		for(int i=0; i <50; i++) {
 			selectedData[i] = new movie();
 		}
 	}
@@ -71,7 +74,7 @@ public class shaishuan extends Composite {
 		btnCheckButton_3.setBounds(147, 3, 69, 16);
 		btnCheckButton_3.setText("\u4E9E\u6D32\u5176\u4ED6");
 		
-		Composite composite_1 = new Composite(this, SWT.NONE);
+		composite_1 = new Composite(this, SWT.NONE);
 		composite_1.setBounds(75, 125, 324, 38);
 		composite_1.setLayout(null);
 		
@@ -119,20 +122,50 @@ public class shaishuan extends Composite {
 		b11.setBounds(195, 22, 117, 16);
 		b11.setText("\u6050\u6016\u3001\u9A5A\u609A\u3001\u61F8\u7591");
 		
-		Button button_3 = new Button(this, SWT.NONE);
-		button_3.setBounds(75, 185, 397, 25);
+		button = new Button(this, SWT.NONE);
+		button.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				maintest.Show1();
+			}
+		});
+		button.setBounds(75, 185, 397, 25);
 		
-		Button button_4 = new Button(this, SWT.NONE);
-		button_4.setBounds(75, 216, 397, 25);
+		button_1 = new Button(this, SWT.NONE);
+		button_1.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				maintest.Show2();
+			}
+		});
+		button_1.setBounds(75, 216, 397, 25);
 		
-		Button button_5 = new Button(this, SWT.NONE);
-		button_5.setBounds(75, 247, 397, 25);
+		button_2 = new Button(this, SWT.NONE);
+		button_2.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				maintest.Show3();
+			}
+		});
+		button_2.setBounds(75, 247, 397, 25);
 		
-		Button button_6 = new Button(this, SWT.NONE);
-		button_6.setBounds(75, 278, 397, 25);
+		button_3 = new Button(this, SWT.NONE);
+		button_3.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				maintest.Show4();
+			}
+		});
+		button_3.setBounds(75, 278, 397, 25);
 		
-		Button button_7 = new Button(this, SWT.NONE);
-		button_7.setBounds(75, 309, 397, 25);
+		button_4 = new Button(this, SWT.NONE);
+		button_4.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				maintest.Show5();
+			}
+		});
+		button_4.setBounds(75, 309, 397, 25);
 		
 		Button chooseEnd = new Button(this, SWT.NONE);
 		chooseEnd.setBounds(405, 127, 112, 36);
@@ -159,11 +192,11 @@ public class shaishuan extends Composite {
 
 					filter();
 					
-					button_3.setText(selectedData[btn_1].name);
-					button_4.setText(selectedData[btn_2].name);
-					button_5.setText(selectedData[btn_3].name);
-					button_6.setText(selectedData[btn_4].name);
-					button_7.setText(selectedData[btn_5].name);
+					button.setText(selectedData[btn_1].name);
+					button_1.setText(selectedData[btn_2].name);
+					button_2.setText(selectedData[btn_3].name);
+					button_3.setText(selectedData[btn_4].name);
+					button_4.setText(selectedData[btn_5].name);
 
 			}
 		});
@@ -179,11 +212,11 @@ public class shaishuan extends Composite {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				if(btn_1>1 && finished == true) {
-					button_3.setText(selectedData[btn_1-=5].name);
-					button_4.setText(selectedData[btn_2-=5].name);
-					button_5.setText(selectedData[btn_3-=5].name);
-					button_6.setText(selectedData[btn_4-=5].name);
-					button_7.setText(selectedData[btn_5-=5].name);
+					button.setText(selectedData[btn_1-=5].name);
+					button_1.setText(selectedData[btn_2-=5].name);
+					button_2.setText(selectedData[btn_3-=5].name);
+					button_3.setText(selectedData[btn_4-=5].name);
+					button_4.setText(selectedData[btn_5-=5].name);
 				}
 
 			}
@@ -196,11 +229,11 @@ public class shaishuan extends Composite {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				if(finished == true && (btn_5+5 <= cnt)) {
-					button_3.setText(selectedData[btn_1+=5].name);
-					button_4.setText(selectedData[btn_2+=5].name);
-					button_5.setText(selectedData[btn_3+=5].name);
-					button_6.setText(selectedData[btn_4+=5].name);
-					button_7.setText(selectedData[btn_5+=5].name);
+					button.setText(selectedData[btn_1+=5].name);
+					button_1.setText(selectedData[btn_2+=5].name);
+					button_2.setText(selectedData[btn_3+=5].name);
+					button_3.setText(selectedData[btn_4+=5].name);
+					button_4.setText(selectedData[btn_5+=5].name);
 				}}
 		});
 		btnNext.setText("next");
