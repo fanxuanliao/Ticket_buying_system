@@ -131,7 +131,7 @@ public class shaishuan extends Composite {
 		
 		button_1 = new Button(this, SWT.NONE);
 
-		button_1.setBounds(75, 216, 397, 25);
+		button_1.setBounds(75, 216, 397, 25); 
 		
 		button_2 = new Button(this, SWT.NONE);
 
