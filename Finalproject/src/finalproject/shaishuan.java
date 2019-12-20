@@ -41,7 +41,7 @@ public class shaishuan extends Composite {
 		for(int i=cnt; i < cnt+(5-cnt%5) ; i++) {
 			selectedData[i] = new movie();
 		}*/
-		for(int i=0; i < 50; i++) {
+		for(int i=0; i <50; i++) {
 			selectedData[i] = new movie();
 		}
 	}

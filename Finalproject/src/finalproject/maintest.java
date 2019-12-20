@@ -45,7 +45,7 @@ public class maintest {
 		shell = new Shell();
 		shell.setSize(1293, 772);
 		shell.setText("SWT Application");
-		shell.setLayout(new StackLayout());
+		shell.setLayout(new FillLayout(SWT.HORIZONTAL));
 		
 		shaishuan shaishuan_ = new shaishuan(shell, SWT.NONE);
 		

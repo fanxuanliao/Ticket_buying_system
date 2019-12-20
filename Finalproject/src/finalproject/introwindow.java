@@ -12,8 +12,7 @@ import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.Text;
 
 public class introwindow extends Composite {
-	Point iden, amo;
-	int amount, pay;
+	int iden, amount, pay;
 
 	/**
 	 * Create the composite.
@@ -47,7 +46,6 @@ public class introwindow extends Composite {
 		Combo combo = new Combo(this, SWT.NONE);
 		combo.setItems(new String[] {"\u6210\u4EBA\u7968", "\u611B\u5FC3\u7968"});
 		combo.setBounds(155, 433, 88, 23);
-		combo.select(0);
 		
 		Label label_2 = new Label(this, SWT.NONE);
 		label_2.setText("\u5F35\u6578");
@@ -56,7 +54,7 @@ public class introwindow extends Composite {
 		label_2.setBounds(260, 433, 45, 23);
 		
 		Combo combo_1 = new Combo(this, SWT.NONE);
-		combo_1.setItems(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"});
+		combo_1.setItems(new String[] {"1", "2", "3", "4"});
 		combo_1.setBounds(311, 433, 88, 23);
 		
 		Label label_3 = new Label(this, SWT.NONE);
@@ -75,16 +73,23 @@ public class introwindow extends Composite {
 		label_5.setText("\u7E3D\u7968\u50F9\u70BA\uFF1A");
 		
 		Label prize = new Label(this, SWT.NONE);
+		prize.setAlignment(SWT.RIGHT);
 
 		prize.setFont(SWTResourceManager.getFont("¶ÂÅé-Ác", 16, SWT.BOLD));
-		prize.setBounds(501, 488, 88, 23);
+		prize.setBounds(501, 488, 90, 23);
 		
 		Button button = new Button(this, SWT.NONE);
 		button.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				iden = combo.getSelection();
-				prize.setText("666");
+				iden = combo.getSelectionIndex();
+				amount = combo_1.getSelectionIndex();
+				pay = combo_2.getSelectionIndex();
+				int money = 300;
+				if(iden == 1) money*= 0.5;
+				if(pay == 1) money*=0.8;
+				money*= (amount+1);
+				prize.setText( "$" + money );
 			}
 		});
 		button.setFont(SWTResourceManager.getFont("Microsoft JhengHei UI", 12, SWT.NORMAL));
