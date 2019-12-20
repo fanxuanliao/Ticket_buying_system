@@ -27,7 +27,7 @@ public class shaishuan extends Composite {
 	movie[] selectedData = new movie[50];
 
 	public void filter() {
-		cnt=0;
+		/*cnt=0;
 		for(int i =0;i<50;i++) {
 			if( (Main.datain[i].En && En) || (Main.datain[i].Eu &&Eu) || (Main.datain[i].Ch && Ch) || (Main.datain[i].other && other) ) {
 				selectedData[cnt] = Main.datain[i];
@@ -39,6 +39,9 @@ public class shaishuan extends Composite {
 			}
 		}
 		for(int i=cnt; i < cnt+(5-cnt%5) ; i++) {
+			selectedData[i] = new movie();
+		}*/
+		for(int i=0; i < 50; i++) {
 			selectedData[i] = new movie();
 		}
 	}

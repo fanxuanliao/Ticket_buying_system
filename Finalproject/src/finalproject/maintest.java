@@ -3,6 +3,8 @@ package finalproject;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.StackLayout;
+import org.eclipse.swt.layout.FillLayout;
 
 public class maintest {
 
@@ -43,9 +45,11 @@ public class maintest {
 		shell = new Shell();
 		shell.setSize(1293, 772);
 		shell.setText("SWT Application");
+		shell.setLayout(new StackLayout());
 		
 		shaishuan shaishuan_ = new shaishuan(shell, SWT.NONE);
-		shaishuan_.setBounds(36, 35, 619, 708);
+		
+		introwindow introwindow_ = new introwindow(shell, SWT.NONE);
 
 	}
 }
