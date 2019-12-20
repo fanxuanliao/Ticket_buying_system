@@ -72,6 +72,11 @@ public class maintest {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				start();
+				shaishuan.button.setText("");
+				shaishuan.button_1.setText("");
+				shaishuan.button_2.setText("");
+				shaishuan.button_3.setText("");
+				shaishuan.button_4.setText("");
 			}
 		});
 		button.setFont(SWTResourceManager.getFont("Microsoft JhengHei UI", 16, SWT.BOLD));
@@ -128,11 +133,14 @@ public class maintest {
 		StackLayout layout= (StackLayout) this.composite.getLayout();
 		layout.topControl= shaishuan;
 		this.composite.layout();
+		shaishuan.finished = false;
 	}
 	private void Show() {
-		StackLayout layout= (StackLayout) this.composite.getLayout();
-		layout.topControl= introwindow;
-		this.composite.layout();
+		if(shaishuan.finished == true) {
+			StackLayout layout= (StackLayout) this.composite.getLayout();
+			layout.topControl= introwindow;
+			this.composite.layout();
+		}
 	}
 
 	private void Showcom() {
