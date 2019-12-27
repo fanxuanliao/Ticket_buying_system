@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commands>
+	<addCategory
+		id="custom_1576240231780"
+		name="self"
+		description=""
+		visible="true"
+		open="true"
+		nextCategory="org.eclipse.wb.rcp.system"/>
+	<addComponent
+		id="custom_1576240251654"
+		name="shaishuan"
+		visible="true"
+		class="finalproject.shaishuan"
+		category="custom_1576240231780"/>
+	<removeEntry
+		id="custom_1576240251654"/>
+	<addComponent
+		id="custom_1576240444608"
+		name="shaishuan"
+		visible="true"
+		class="finalproject.shaishuan"
+		category="custom_1576240231780"/>
+	<removeEntry
+		id="custom_1576240444608"/>
+	<addComponent
+		id="custom_1576240535223"
+		name="shaishuan"
+		visible="true"
+		class="finalproject.shaishuan"
+		category="custom_1576240231780"/>
+</commands>

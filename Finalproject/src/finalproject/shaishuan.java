@@ -24,7 +24,7 @@ public class shaishuan extends Composite {
 	public boolean finished = false;
 	boolean En,Eu,Ch,other;
 	boolean st01,st02,st03,st04,st05,st06,st07,st08,st09,st10,st11;
-	movie[] selectedData = new movie[50];
+	movieUnsettled[] selectedData = new movieUnsettled[50];
 	public Composite composite_1;
 	public Button button;
 	public Button button_1;
@@ -34,22 +34,27 @@ public class shaishuan extends Composite {
 
 	public void filter() {
 		cnt=0;
-		/*for(int i =0;i<50;i++) {
-			if( (Main.datain[i].En && En) || (Main.datain[i].Eu &&Eu) || (Main.datain[i].Ch && Ch) || (Main.datain[i].other && other) ) {
-				selectedData[cnt] = Main.datain[i];
+		for(int i =0;i<55;i++) {
+			if( (MainUnsettled.datain[i].En && En) || (MainUnsettled.datain[i].Eu &&Eu) || (MainUnsettled.datain[i].Ch && Ch) || (MainUnsettled.datain[i].other && other) ) {
+				selectedData[cnt] = MainUnsettled.datain[i];
 				cnt++;
 			}
-			else if( (st01 && Main.datain[i].ty01)||(st02 && Main.datain[i].ty02)||(st03 && Main.datain[i].ty03)||(st04 && Main.datain[i].ty04)||(st05 && Main.datain[i].ty05)||(st06 && Main.datain[i].ty06)||(st07 && Main.datain[i].ty07)||(st08 && Main.datain[i].ty08)||(st09 && Main.datain[i].ty09)||(st10 && Main.datain[i].ty10)||(st11 && Main.datain[i].ty11)){
-				selectedData[cnt] = Main.datain[i];
+			else if( (st01 && MainUnsettled.datain[i].ty01)||(st02 && MainUnsettled.datain[i].ty02)||(st03 && MainUnsettled.datain[i].ty03)||(st04 && MainUnsettled.datain[i].ty04)||(st05 && MainUnsettled.datain[i].ty05)||(st06 && MainUnsettled.datain[i].ty06)||(st07 && MainUnsettled.datain[i].ty07)||(st08 && MainUnsettled.datain[i].ty08)||(st09 && MainUnsettled.datain[i].ty09)||(st10 && MainUnsettled.datain[i].ty10)||(st11 && MainUnsettled.datain[i].ty11)){
+				selectedData[cnt] = MainUnsettled.datain[i];
 				cnt++;
 			}
 		}
+		/*
 		for(int i=cnt; i < cnt+(5-cnt%5) ; i++) {
-			selectedData[i] = new movie();
-		}*/
-		for(int i=0; i < 50 ; i++) {
+			selectedData[i] = new movieUnsettled();
+		}
+		*/
+		/*
+		//pick data and display name on btn
+		for(int i=0; i < 55 ; i++) {
 			selectedData[i] = new movie();
 		}			
+		*/
 	}
 	
 	

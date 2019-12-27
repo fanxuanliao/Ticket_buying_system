@@ -41,7 +41,7 @@ public class movieUnsettled {
 		ty09 = genre[8];
 		ty10 = genre[9];
 		ty11 = genre[10];
-		//System.out.print(this.name +' ');
+		
 		//System.out.print(this.ty01 );
 		//System.out.print(this.ty02 );
 		//System.out.print(this.ty03 );
@@ -55,12 +55,15 @@ public class movieUnsettled {
 		//System.out.println(this.ty11 );
 		FileReader fr = new FileReader("src/intro/" + i + ".txt");
 		BufferedReader br = new BufferedReader(fr);
+		//System.out.print(this.name +' ');
+		/*
 		while (br.ready())
 		{
 			//System.out.println(br.readLine());
 		}
-		
+		*/
 		fr.close();
+		br.close();
 	}
 	//movie contribute
 	String name;

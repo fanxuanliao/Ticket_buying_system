@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.wb.internal.core.editor.palette.dialogs.CategoryAddDialog">
+		<item key="x" value="653"/>
+		<item key="y" value="308"/>
+		<item key="width" value="613"/>
+		<item key="height" value="464"/>
+	</section>
+	<section name="org.eclipse.wb.internal.core.editor.palette.dialogs.ComponentAddDialog">
+		<item key="x" value="595"/>
+		<item key="y" value="319"/>
+		<item key="width" value="729"/>
+		<item key="height" value="442"/>
+	</section>
+</section>

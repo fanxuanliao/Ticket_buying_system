@@ -48,28 +48,28 @@ public class MainUnsettled {
 	    	   else if(lineFromFile.contains(HORROR)||
 	    			   lineFromFile.contains(SUSPENSE)||
 	    			   lineFromFile.contains(THRILLER)) {
-	    		   result[3] = true;
+	    		   result[10] = true;
 	    	   }
 	    	   else if(lineFromFile.contains(DRAMA)) {
-	    		   result[4] = true;
+	    		   result[3] = true;
 	    	   }
 	    	   else if(lineFromFile.contains(ADVENTURE)) {
-	    		   result[5] = true;
+	    		   result[4] = true;
 	    	   }
 	    	   else if(lineFromFile.contains(ROMANCE)) {
-	    		   result[6] = true;
+	    		   result[5] = true;
 	    	   }
 	    	   else if(lineFromFile.contains(SCIFI)) {
-	    		   result[7] = true;
+	    		   result[6] = true;
 	    	   }
 	    	   else if(lineFromFile.contains(COMEDY)) {
-	    		   result[8] = true;
+	    		   result[7] = true;
 	    	   }
 	    	   else if(lineFromFile.contains(HISTORY)) {
-	    		   result[9] = true;
+	    		   result[8] = true;
 	    	   }
 	    	   else if(lineFromFile.contains(MUSICAL)) {
-	    		   result[10] = true;
+	    		   result[9] = true;
 	    	   }
 	    	}
 	    scanner.close();
@@ -97,19 +97,24 @@ public class MainUnsettled {
 		
 		movieUnsettled[] allData;
 		allData = new movieUnsettled[55];
-		for(int i=1;i<=55;i++)
+		for(int i=0;i<55;i++)
 		{
 			try
 			{
-				String genreSrc = "src/genre/" + i + ".txt";
+				String genreSrc = "src/genre/" + (i+1) + ".txt";
 				Boolean [] genreTable = searchForGenre(genreSrc);
-				String nameSrc = "src/name/" + i + ".txt";
+				for(int j=0; j<11; j++) {
+					System.out.print(genreTable[j]+" ");
+				}
+				System.out.println();
+				String nameSrc = "src/name/" + (i+1) + ".txt";
 				String NAME = searchForName(nameSrc);
-				String order = Integer.toString(i);
-				movieUnsettled datain = new movieUnsettled(NAME, order, genreTable);
+				String order = Integer.toString(i+1);
+				movieUnsettled datain = new movieUnsettled(NAME ,order, genreTable);
 				allData[i] = datain;
-				System.out.println(datain.name);
+				System.out.println(allData[i].name);
 //Why no output!!!				//System.out.println(allData[i].name);
+				System.out.println(i+1);
 			}
 		
 			catch(IOException IO)
