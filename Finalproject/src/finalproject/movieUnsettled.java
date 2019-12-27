@@ -8,6 +8,7 @@ import java.io.IOException;
 public class movieUnsettled {
 	movieUnsettled(){		
 	this.name = "defalt";
+	this.index =1;
 	En = false;
 	Eu = false;
 	Ch = false;
@@ -27,9 +28,10 @@ public class movieUnsettled {
 
 	};
 	
-	movieUnsettled(String name, String i,Boolean genre[]) throws IOException{
+	movieUnsettled(String name, String i,Boolean genre[],int id) throws IOException{
 		this.name = name;
 		this.prize = 300.0;
+		this.index = id;
 		ty01 = genre[0];
 		ty02 = genre[1];
 		ty03 = genre[2];
@@ -68,7 +70,7 @@ public class movieUnsettled {
 	//movie contribute
 	String name;
 	String photo;
-	
+	int index;
 	boolean En;
 	boolean Eu;
 	boolean Ch;

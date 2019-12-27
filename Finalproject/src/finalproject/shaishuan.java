@@ -134,7 +134,7 @@ public class shaishuan extends Composite {
 		button.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				introwindow.setMovieIntro(0);
+				introwindow.setMovieIntro(btn_1);
 			}
 		});
 
@@ -144,7 +144,7 @@ public class shaishuan extends Composite {
 		button_1.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				introwindow.setMovieIntro(btn_1);
+				introwindow.setMovieIntro(btn_2);
 			}
 		});
 
@@ -154,7 +154,7 @@ public class shaishuan extends Composite {
 		button_2.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				introwindow.setMovieIntro(btn_2);
+				introwindow.setMovieIntro(btn_3);
 			}
 		});
 
@@ -164,7 +164,7 @@ public class shaishuan extends Composite {
 		button_3.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				introwindow.setMovieIntro(btn_3);
+				introwindow.setMovieIntro(btn_4);
 			}
 		});
 
@@ -174,7 +174,7 @@ public class shaishuan extends Composite {
 		button_4.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				introwindow.setMovieIntro(btn_4);
+				introwindow.setMovieIntro(btn_5);
 			}
 		});
 

@@ -110,7 +110,7 @@ public class MainUnsettled {
 				String nameSrc = "src/name/" + (i+1) + ".txt";
 				String NAME = searchForName(nameSrc);
 				String order = Integer.toString(i+1);
-				movieUnsettled datain = new movieUnsettled(NAME ,order, genreTable);
+				movieUnsettled datain = new movieUnsettled(NAME ,order, genreTable,(i+1));
 				allData[i] = datain;
 				System.out.println(allData[i].name);
 //Why no output!!!				//System.out.println(allData[i].name);
