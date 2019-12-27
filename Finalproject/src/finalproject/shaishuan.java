@@ -24,7 +24,7 @@ public class shaishuan extends Composite {
 	public boolean finished = false;
 	boolean En,Eu,Ch,other;
 	boolean st01,st02,st03,st04,st05,st06,st07,st08,st09,st10,st11;
-	movieUnsettled[] selectedData = new movieUnsettled[50];
+	public static movieUnsettled[] selectedData = new movieUnsettled[50];
 	public Composite composite_1;
 	public Button button;
 	public Button button_1;
@@ -131,22 +131,52 @@ public class shaishuan extends Composite {
 		b11.setText("\u6050\u6016\u3001\u9A5A\u609A\u3001\u61F8\u7591");
 		
 		button = new Button(this, SWT.NONE);
+		button.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				introwindow.setMovieIntro(0);
+			}
+		});
 
 		button.setBounds(75, 185, 397, 25);
 		
 		button_1 = new Button(this, SWT.NONE);
+		button_1.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				introwindow.setMovieIntro(btn_1);
+			}
+		});
 
 		button_1.setBounds(75, 216, 397, 25); 
 		
 		button_2 = new Button(this, SWT.NONE);
+		button_2.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				introwindow.setMovieIntro(btn_2);
+			}
+		});
 
 		button_2.setBounds(75, 247, 397, 25);
 		
 		button_3 = new Button(this, SWT.NONE);
+		button_3.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				introwindow.setMovieIntro(btn_3);
+			}
+		});
 
 		button_3.setBounds(75, 278, 397, 25);
 		
 		button_4 = new Button(this, SWT.NONE);
+		button_4.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				introwindow.setMovieIntro(btn_4);
+			}
+		});
 
 		button_4.setBounds(75, 309, 397, 25);
 		

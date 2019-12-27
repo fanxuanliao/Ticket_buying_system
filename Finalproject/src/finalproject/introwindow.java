@@ -14,6 +14,10 @@ import org.eclipse.swt.widgets.Text;
 public class introwindow extends Composite {
 	int iden, amount, pay;
 	public Button button_1;
+	
+	public static Label name;
+	public static Label intro;
+	public static Label image;
 
 	/**
 	 * Create the composite.
@@ -24,17 +28,18 @@ public class introwindow extends Composite {
 		super(parent, style);
 		setLayout(null);
 		
-		Label name = new Label(this, SWT.NONE);
+		name = new Label(this, SWT.NONE);
 		name.setFont(SWTResourceManager.getFont("黑體-繁", 25, SWT.NORMAL));
 		name.setBounds(75, 68, 139, 47);
-		name.setText("\u96FB\u5F71\u540D\u7A31");
+		name.setText("電影名稱");
 		
-		Label intro = new Label(this, SWT.NONE);
+		intro = new Label(this, SWT.NONE);
 		intro.setFont(SWTResourceManager.getFont("黑體-繁", 14, SWT.NORMAL));
 		intro.setBounds(75, 162, 471, 236);
-		intro.setText("\u96FB\u5F71\u4ECB\u7D39");
+		intro.setText("電影介紹");
 		
-		Label image = new Label(this, SWT.NONE);
+		
+		image = new Label(this, SWT.NONE);
 		image.setImage(SWTResourceManager.getImage(introwindow.class, "/photo/1.jpg"));
 		image.setBounds(552, 68, 203, 282);
 		
@@ -107,5 +112,12 @@ public class introwindow extends Composite {
 	@Override
 	protected void checkSubclass() {
 		// Disable the check that prevents subclassing of SWT components
+	}
+	
+	public static void setMovieIntro(int btn) {
+		//String path = "/photo/" + shaishuan.selectedData[btn].index  +".jpg"
+		name.setText(shaishuan.selectedData[btn].name);
+		//intro.setText(shaishuan.selectedData[btn].);
+		//image.setImage(SWTResourceManager.getImage(introwindow.class, path));
 	}
 }
