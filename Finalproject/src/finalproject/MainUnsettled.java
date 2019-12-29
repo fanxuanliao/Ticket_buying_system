@@ -103,18 +103,18 @@ public class MainUnsettled {
 			{
 				String genreSrc = "src/genre/" + (i+1) + ".txt";
 				Boolean [] genreTable = searchForGenre(genreSrc);
-				for(int j=0; j<11; j++) {
-					System.out.print(genreTable[j]+" ");
-				}
+				//for(int j=0; j<11; j++) {
+					//System.out.print(genreTable[j]+" ");
+				//}
 				System.out.println();
 				String nameSrc = "src/name/" + (i+1) + ".txt";
 				String NAME = searchForName(nameSrc);
 				String order = Integer.toString(i+1);
 				movieUnsettled datain = new movieUnsettled(NAME ,order, genreTable,(i+1));
 				allData[i] = datain;
-				System.out.println(allData[i].name);
+				//System.out.println(allData[i].name);
 //Why no output!!!				//System.out.println(allData[i].name);
-				System.out.println(i+1);
+				//System.out.println(i+1);
 			}
 		
 			catch(IOException IO)

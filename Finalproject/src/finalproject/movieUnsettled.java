@@ -7,8 +7,9 @@ import java.io.IOException;
 
 public class movieUnsettled {
 	movieUnsettled(){		
-	this.name = "defalt";
+	this.name = "default";
 	this.index =1;
+	intro = "default";
 	En = false;
 	Eu = false;
 	Ch = false;
@@ -44,32 +45,23 @@ public class movieUnsettled {
 		ty10 = genre[9];
 		ty11 = genre[10];
 		
-		//System.out.print(this.ty01 );
-		//System.out.print(this.ty02 );
-		//System.out.print(this.ty03 );
-		//System.out.print(this.ty04 );
-		//System.out.print(this.ty05 );
-		//System.out.print(this.ty06 );
-		//System.out.print(this.ty07 );
-		//System.out.print(this.ty08 );
-		//System.out.print(this.ty09 );
-		//System.out.print(this.ty10 );
-		//System.out.println(this.ty11 );
+		
 		FileReader fr = new FileReader("src/intro/" + i + ".txt");
 		BufferedReader br = new BufferedReader(fr);
-		//System.out.print(this.name +' ');
-		/*
+		intro ="";
 		while (br.ready())
 		{
-			//System.out.println(br.readLine());
-		}
-		*/
+			String thisLine = br.readLine();
+			intro += thisLine;
+			intro +="\n";
+		}	
 		fr.close();
 		br.close();
 	}
 	//movie contribute
 	String name;
 	String photo;
+	String intro;
 	int index;
 	boolean En;
 	boolean Eu;

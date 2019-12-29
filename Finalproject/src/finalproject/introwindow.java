@@ -117,7 +117,7 @@ public class introwindow extends Composite {
 	public static void setMovieIntro(int btn) {
 		String path = "/photo/" + shaishuan.selectedData[btn].index  +".jpg";
 		name.setText(shaishuan.selectedData[btn].name);
-		//intro.setText(shaishuan.selectedData[btn].);
+		intro.setText(("¹q¼v¤¶²Ð"+"\n"+shaishuan.selectedData[btn].intro));
 		image.setImage(SWTResourceManager.getImage(introwindow.class, path));
 	}
 }
