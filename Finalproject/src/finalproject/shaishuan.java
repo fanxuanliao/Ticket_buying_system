@@ -24,7 +24,7 @@ public class shaishuan extends Composite {
 	public boolean finished = false;
 	boolean En,Eu,Ch,other;
 	boolean st01,st02,st03,st04,st05,st06,st07,st08,st09,st10,st11;
-	public static movieUnsettled[] selectedData = new movieUnsettled[50];
+	public static movieUnsettled[] selectedData = new movieUnsettled[60];
 	public Composite composite_1;
 	public Button button;
 	public Button button_1;

@@ -30,18 +30,18 @@ public class introwindow extends Composite {
 		
 		name = new Label(this, SWT.NONE);
 		name.setFont(SWTResourceManager.getFont("黑體-繁", 25, SWT.NORMAL));
-		name.setBounds(75, 68, 139, 47);
+		name.setBounds(75, 22, 139, 47);
 		name.setText("電影名稱");
 		
 		intro = new Label(this, SWT.NONE);
 		intro.setFont(SWTResourceManager.getFont("黑體-繁", 14, SWT.NORMAL));
-		intro.setBounds(75, 162, 471, 236);
+		intro.setBounds(75, 78, 471, 330);
 		intro.setText("電影介紹");
 		
 		
 		image = new Label(this, SWT.NONE);
 		image.setImage(SWTResourceManager.getImage(introwindow.class, "/photo/1.jpg"));
-		image.setBounds(552, 68, 203, 282);
+		image.setBounds(552, 84, 203, 282);
 		
 		Label lblNewLabel = new Label(this, SWT.NONE);
 		lblNewLabel.setAlignment(SWT.RIGHT);
