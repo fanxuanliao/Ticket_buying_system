@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class movie {
 	movie(){		
-	this.name = "default";
+	this.name = "noname";
 	En = false;
 	Eu = false;
 	Ch = false;

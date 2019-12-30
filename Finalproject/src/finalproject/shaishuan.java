@@ -44,11 +44,11 @@ public class shaishuan extends Composite {
 				cnt++;
 			}
 		}
-		/*
+		
 		for(int i=cnt; i < cnt+(5-cnt%5) ; i++) {
 			selectedData[i] = new movieUnsettled();
 		}
-		*/
+		
 		/*
 		//pick data and display name on btn
 		for(int i=0; i < 55 ; i++) {
