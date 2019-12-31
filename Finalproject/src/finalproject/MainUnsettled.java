@@ -3,6 +3,8 @@ package finalproject;
 import java.io.IOException;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.BufferedReader;
 import java.io.File;
 import java.util.Arrays;
 
@@ -79,10 +81,12 @@ public class MainUnsettled {
 	    return result;
 	}
 	public static String searchForName(String path) throws FileNotFoundException{
+		
 	    try {
 	    	File file = new File(path);
 	    	final Scanner scanner = new Scanner(file);
 	    	String result = scanner.nextLine();
+	    	
 	    	scanner.close();
 	    	return result;
 	    }catch (FileNotFoundException fie){
@@ -92,9 +96,40 @@ public class MainUnsettled {
 	    }
 	    
 	}
+	public static Boolean[] searchForLanguage(String path) throws FileNotFoundException{
+		Boolean [] result = new Boolean[4];
+		Arrays.fill(result, Boolean.FALSE);
+		try {
+	    	File file = new File(path);
+	    	final Scanner scanner = new Scanner(file);
+	    	while (scanner.hasNextLine()) {
+	    		String lineFromFile = scanner.nextLine();
+	    		if(lineFromFile.contains(" En")) {
+	    			result[0] = true;
+	    		}
+	    		else if(lineFromFile.contains(" Fr")||
+	    				lineFromFile.contains(" De")||
+	    				lineFromFile.contains(" Nor")) {
+	    			result[1] = true;
+	    		}
+	    		else if(lineFromFile.contains(" Ch")) {
+	    			result[2] = true;
+	    		}
+	    		else if(lineFromFile.contains(" Jp")||
+	    				lineFromFile.contains(" Kr")||
+	    				lineFromFile.contains(" Th")||
+	    				lineFromFile.contains(" Other")) {
+	    			result[3] = true;
+	    		}
+	    	}
+	    	scanner.close();
+	    }catch (FileNotFoundException fie){
+	    	System.out.println("file not found exception.");
+	    }
+    	return result;  
+	}
 	
 	public static movieUnsettled[] setData(){
-		
 		movieUnsettled[] allData;
 		allData = new movieUnsettled[55];
 		for(int i=0;i<55;i++)
@@ -106,11 +141,24 @@ public class MainUnsettled {
 				//for(int j=0; j<11; j++) {
 					//System.out.print(genreTable[j]+" ");
 				//}
-				System.out.println();
+				//System.out.println();
 				String nameSrc = "src/name/" + (i+1) + ".txt";
 				String NAME = searchForName(nameSrc);
+
+				String languageSrc = "src/language/" + (i+1) + ".txt";
+				Boolean [] languageTable = searchForLanguage(languageSrc);
+				//for(int j=0; j<4; j++) {
+					//if(languageTable[j]==true) {
+						//System.out.print(" 1 ");
+					//}
+					//else {
+						//System.out.print(" 0 ");
+					//}
+				//}
+				//System.out.println();
+				
 				String order = Integer.toString(i+1);
-				movieUnsettled datain = new movieUnsettled(NAME ,order, genreTable,(i+1));
+				movieUnsettled datain = new movieUnsettled(NAME ,order, genreTable,languageTable,(i+1));
 				allData[i] = datain;
 				//System.out.println(allData[i].name);
 //Why no output!!!				//System.out.println(allData[i].name);

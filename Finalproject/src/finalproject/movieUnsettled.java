@@ -29,7 +29,7 @@ public class movieUnsettled {
 
 	};
 	
-	movieUnsettled(String name, String i,Boolean genre[],int id) throws IOException{
+	movieUnsettled(String name, String i,Boolean genre[],Boolean language [],int id) throws IOException{
 		this.name = name;
 		this.prize = 300.0;
 		this.index = id;
@@ -44,6 +44,11 @@ public class movieUnsettled {
 		ty09 = genre[8];
 		ty10 = genre[9];
 		ty11 = genre[10];
+		
+		En = language[0];
+		Eu = language[1];
+		Ch = language[2];
+		other = language[3];
 		
 		
 		FileReader fr = new FileReader("src/intro/" + i + ".txt");
