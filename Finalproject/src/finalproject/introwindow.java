@@ -14,23 +14,34 @@ import org.eclipse.swt.widgets.Text;
 public class introwindow extends Composite {
 	int iden, amount, pay;
 	public Button button_1;
+	public Button pre;
 	
 	public static Label name;
 	public static Label intro;
 	public static Label image;
+	private Combo combo;
+	private Combo combo_1;
+	private Combo combo_2;
+	private Label prize;
 
 	/**
 	 * Create the composite.
 	 * @param parent
 	 * @param style
 	 */
+	public void reset() {
+		prize.setText( "" );
+		combo.setText("");
+		combo_1.setText("");
+		combo_2.setText("");
+	}
 	public introwindow(Composite parent, int style) {
 		super(parent, style);
 		setLayout(null);
 		
 		name = new Label(this, SWT.NONE);
 		name.setFont(SWTResourceManager.getFont("黑體-繁", 25, SWT.NORMAL));
-		name.setBounds(75, 22, 139, 47);
+		name.setBounds(75, 22, 680, 47);
 		name.setText("電影名稱");
 		
 		intro = new Label(this, SWT.NONE);
@@ -49,7 +60,7 @@ public class introwindow extends Composite {
 		lblNewLabel.setBounds(75, 433, 70, 23);
 		lblNewLabel.setText("\u7968\u7A2E");
 		
-		Combo combo = new Combo(this, SWT.NONE);
+		combo = new Combo(this, SWT.NONE);
 		combo.setItems(new String[] {"\u6210\u4EBA\u7968", "\u611B\u5FC3\u7968"});
 		combo.setBounds(155, 433, 88, 23);
 		
@@ -59,7 +70,7 @@ public class introwindow extends Composite {
 		label_2.setAlignment(SWT.RIGHT);
 		label_2.setBounds(260, 433, 45, 23);
 		
-		Combo combo_1 = new Combo(this, SWT.NONE);
+		combo_1 = new Combo(this, SWT.NONE);
 		combo_1.setItems(new String[] {"1", "2", "3", "4"});
 		combo_1.setBounds(311, 433, 88, 23);
 		
@@ -69,7 +80,7 @@ public class introwindow extends Composite {
 		label_3.setAlignment(SWT.RIGHT);
 		label_3.setBounds(405, 433, 90, 23);
 		
-		Combo combo_2 = new Combo(this, SWT.NONE);
+		combo_2 = new Combo(this, SWT.NONE);
 		combo_2.setItems(new String[] {"\u73FE\u91D1", "\u4FE1\u7528\u5361"});
 		combo_2.setBounds(501, 433, 88, 23);
 		
@@ -78,7 +89,7 @@ public class introwindow extends Composite {
 		label_5.setBounds(405, 488, 99, 23);
 		label_5.setText("\u7E3D\u7968\u50F9\u70BA\uFF1A");
 		
-		Label prize = new Label(this, SWT.NONE);
+		prize = new Label(this, SWT.NONE);
 		prize.setAlignment(SWT.RIGHT);
 
 		prize.setFont(SWTResourceManager.getFont("黑體-繁", 16, SWT.BOLD));
@@ -106,6 +117,11 @@ public class introwindow extends Composite {
 		button_1.setFont(SWTResourceManager.getFont("Microsoft JhengHei UI", 12, SWT.NORMAL));
 		button_1.setText("\u78BA\u8A8D\u4ED8\u6B3E");
 		button_1.setBounds(621, 488, 114, 35);
+		
+		pre = new Button(this, SWT.NONE);
+		pre.setFont(SWTResourceManager.getFont("Microsoft JhengHei UI", 16, SWT.NORMAL));
+		pre.setBounds(75, 480, 123, 47);
+		pre.setText("\u4E0A\u4E00\u9801");
 
 	}
 

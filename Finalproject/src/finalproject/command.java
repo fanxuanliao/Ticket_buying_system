@@ -11,6 +11,7 @@ import org.eclipse.swt.events.SelectionEvent;
 
 public class command extends Composite {
 	private Text text;
+	public Button button_1;
 
 	/**
 	 * Create the composite.
@@ -54,6 +55,11 @@ public class command extends Composite {
 		button.setFont(SWTResourceManager.getFont("Microsoft JhengHei UI", 14, SWT.BOLD));
 		button.setBounds(606, 404, 135, 37);
 		label_1.setFont(SWTResourceManager.getFont("Microsoft JhengHei UI", 16, SWT.BOLD));
+		
+		button_1 = new Button(this, SWT.NONE);
+		button_1.setText("\u4E0A\u4E00\u9801");
+		button_1.setFont(SWTResourceManager.getFont("Microsoft JhengHei UI", 14, SWT.BOLD));
+		button_1.setBounds(85, 404, 135, 37);
 		
 
 

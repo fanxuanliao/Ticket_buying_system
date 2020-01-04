@@ -72,11 +72,7 @@ public class maintest {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				start();
-				shaishuan.button.setText("");
-				shaishuan.button_1.setText("");
-				shaishuan.button_2.setText("");
-				shaishuan.button_3.setText("");
-				shaishuan.button_4.setText("");
+				shaishuan.reset();
 			}
 		});
 		button.setFont(SWTResourceManager.getFont("Microsoft JhengHei UI", 16, SWT.BOLD));
@@ -87,37 +83,60 @@ public class maintest {
 		composite.setLayout(new StackLayout());
 		
 		command = new command(composite, SWT.NONE);
+		command.button_1.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				Show();
+			}
+		});
 		shaishuan = new shaishuan(composite, SWT.NONE);
 		introwindow = new introwindow(composite, SWT.NONE);
+		introwindow.pre.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				start();
+				//shaishuan.reset();
+				shaishuan.finished = true;
+			}
+		});
 
 		shaishuan.button_4.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				Show();
+				introwindow.reset();
 			}
 		});
 		shaishuan.button_3.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				Show();
+				introwindow.reset();
+
 			}
 		});
 		shaishuan.button_2.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				Show();
+				introwindow.reset();
+
 			}
 		});
 		shaishuan.button_1.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				Show();
+				introwindow.reset();
+
 			}
 		});
 		shaishuan.button.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				Show();
+				introwindow.reset();
+
 			}
 		});
 				
